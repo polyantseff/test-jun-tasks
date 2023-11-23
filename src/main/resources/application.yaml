@@ -1,0 +1,32 @@
+#spring.datasource.url=jdbc:postgresql://localhost:5432/juntests
+#spring.datasource.username=postgres
+#spring.datasource.password=password
+#spring.jpa.generate-ddl=true
+#spring.jpa.properties.hibernate.jdbc.log.non_contextual_creation=true
+#spring.jpa.properties.hibernate.default_schema=juntests
+#spring.jpa.database-platform=org.hibernate.dialect.PostgreSQL10Dialect
+#spring.datasource.driver-class-name=org.postgresql.Driver
+#spring.application.name=juntests
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/juntests
+    username: postgres #@db.user@
+    password: password #@db.pass@
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      max-lifetime: 2000000
+      maximum-pool-size: 10
+      idle-timeout: 600000
+      minimum-idle: 1
+      schema: juntests
+  jpa:
+    #    database: postgresql
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      use-new-id-generator-mappings: true
+    properties:
+      hibernate:
+        default_schema: juntests
